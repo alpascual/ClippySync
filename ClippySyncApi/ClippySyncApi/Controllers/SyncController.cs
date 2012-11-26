@@ -1,4 +1,5 @@
 ﻿using ClippySyncApi.Code;
+using ClippySyncApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,17 @@ namespace ClippySyncApi.Controllers
                 int UserId = WebSecurity.GetUserId(Encrypter.base64Decode(Username));
 
                 // Business Logic to add the content on the database
+                SyncModel sync = new SyncModel();
+                SyncUser myUser = new SyncUser()
+                {
+                    UserId = UserId,
+                    ClipboardData = Encrypter.base64Decode(Clipboard)
+                };
+
+                sync.SyncUsers.Add(myUser);
+                sync.SaveChanges();
+
+                return Json(myUser.SyncID, JsonRequestBehavior.AllowGet);
             }
             return Json(0, JsonRequestBehavior.AllowGet);            
         }
@@ -36,6 +48,25 @@ namespace ClippySyncApi.Controllers
                 int UserId = WebSecurity.GetUserId(Encrypter.base64Decode(Username));
 
                 // Business Logic to get the clipboard if any or hold the socket open
+                SyncModel sync = new SyncModel();
+                int timeout = 0;
+                while (timeout < 100)
+                {
+                    var checkIfAny = (from c in sync.SyncUsers
+                                      where c.UserId == UserId &
+                                      c.SyncID > SequenceNumber
+                                      select c).ToList();
+
+                    if (checkIfAny.Count > 0)
+                    {
+                        SyncUser userClipboard = checkIfAny[0];
+                        return Json(userClipboard, JsonRequestBehavior.AllowGet);
+                    }
+
+                    // Hold the socket
+                    System.Threading.Thread.Sleep(1000 * 10);
+                    timeout++;
+                }
             }
             return Json("", JsonRequestBehavior.AllowGet);
         }
