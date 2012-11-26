@@ -1,8 +1,10 @@
-﻿using System;
+﻿using ClippySyncApi.Code;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebMatrix.WebData;
 
 namespace ClippySyncApi.Controllers
 {
@@ -16,16 +18,27 @@ namespace ClippySyncApi.Controllers
             return View();
         }
 
-        public int SendClipboard(string UserToken, string Clipboard)
+        public JsonResult SendClipboard(string Username, string Password, string Clipboard)
         {
+            if (WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)) == true)
+            {
+                int UserId = WebSecurity.GetUserId(Encrypter.base64Decode(Username));
 
-            return 0;
+                // Business Logic to add the content on the database
+            }
+            return Json(0, JsonRequestBehavior.AllowGet);            
         }
 
-        public string GetClipboard(string UserToken, int SequenceNumber)
+        public JsonResult GetClipboard(string Username, string Password, int SequenceNumber)
         {
-            return "";
-        }
+            if (WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)) == true)
+            {
+                int UserId = WebSecurity.GetUserId(Encrypter.base64Decode(Username));
 
+                // Business Logic to get the clipboard if any or hold the socket open
+            }
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+        
     }
 }
