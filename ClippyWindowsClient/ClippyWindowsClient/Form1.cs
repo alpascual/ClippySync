@@ -15,6 +15,8 @@ namespace ClippyWindowsClient
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ContextMenu contextMenu1;
         private System.Windows.Forms.MenuItem menuItem1;
+        private System.Windows.Forms.MenuItem menuItemPause;
+        
         private System.ComponentModel.IContainer components1;
 
 
@@ -25,19 +27,24 @@ namespace ClippyWindowsClient
             this.components1 = new System.ComponentModel.Container();
             this.contextMenu1 = new System.Windows.Forms.ContextMenu();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
+            this.menuItemPause = new System.Windows.Forms.MenuItem();
 
             // Initialize contextMenu1 
             this.contextMenu1.MenuItems.AddRange(
                         new System.Windows.Forms.MenuItem[] { this.menuItem1 });
 
             // Initialize menuItem1 
-            this.menuItem1.Index = 0;
+            this.menuItem1.Index = 1;
             this.menuItem1.Text = "E&xit";
             this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
 
+            this.menuItemPause.Index = 0;
+            this.menuItemPause.Text = "P&ause";
+            this.menuItemPause.Click += new System.EventHandler(this.menuItemPause_Click);
+
             // Set up how the form should be displayed. 
             this.ClientSize = new System.Drawing.Size(292, 266);
-            this.Text = "Notify Icon Example";
+            this.Text = "Clippy Sync";
 
             // Create the NotifyIcon. 
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
@@ -52,7 +59,7 @@ namespace ClippyWindowsClient
 
             // The Text property sets the text that will be displayed, 
             // in a tooltip, when the mouse hovers over the systray icon.
-            notifyIcon1.Text = "Form1 (NotifyIcon example)";
+            notifyIcon1.Text = "Keeps in Sync your clipboard between devices";
             notifyIcon1.Visible = true;
 
             // Handle the DoubleClick event to activate the form.
@@ -78,6 +85,11 @@ namespace ClippyWindowsClient
         {
             // Close the form, which closes the application. 
             this.Close();
+        }
+
+        private void menuItemPause_Click(object Sender, EventArgs e)
+        {
+            // Pause the app TODO
         }
 
     }
