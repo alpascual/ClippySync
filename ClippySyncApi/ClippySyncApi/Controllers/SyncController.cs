@@ -19,7 +19,7 @@ namespace ClippySyncApi.Controllers
             return View();
         }
 
-        public JsonResult SendClipboard(string Username, string Password, string Clipboard)
+        public JsonResult SendClipboard(string Username, string Password, string Clipboard, int version)
         {
             if (WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)) == true)
             {
@@ -41,7 +41,7 @@ namespace ClippySyncApi.Controllers
             return Json(0, JsonRequestBehavior.AllowGet);            
         }
 
-        public JsonResult GetClipboard(string Username, string Password, int SequenceNumber)
+        public JsonResult GetClipboard(string Username, string Password, int SequenceNumber, int version)
         {
             if (WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)) == true)
             {
