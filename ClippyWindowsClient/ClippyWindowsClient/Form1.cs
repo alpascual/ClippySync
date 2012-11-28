@@ -31,16 +31,17 @@ namespace ClippyWindowsClient
 
             // Initialize contextMenu1 
             this.contextMenu1.MenuItems.AddRange(
-                        new System.Windows.Forms.MenuItem[] { this.menuItem1 });
+                        new System.Windows.Forms.MenuItem[] { this.menuItemPause, this.menuItem1 });
+
+            
+            this.menuItemPause.Index = 0;
+            this.menuItemPause.Text = "P&ause";
+            this.menuItemPause.Click += new System.EventHandler(this.menuItemPause_Click);
 
             // Initialize menuItem1 
             this.menuItem1.Index = 1;
             this.menuItem1.Text = "E&xit";
             this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
-
-            this.menuItemPause.Index = 0;
-            this.menuItemPause.Text = "P&ause";
-            this.menuItemPause.Click += new System.EventHandler(this.menuItemPause_Click);
 
             // Set up how the form should be displayed. 
             this.ClientSize = new System.Drawing.Size(292, 266);
