@@ -114,6 +114,13 @@ namespace ClippyWindowsClient
             // TODO menu options
         }
 
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            //TODO when click at the button, so hide
+
+            this.Hide();
+        }
+
 
     }
 }
