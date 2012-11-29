@@ -16,6 +16,8 @@ namespace ClippyWindowsClient
         private System.Windows.Forms.ContextMenu contextMenu1;
         private System.Windows.Forms.MenuItem menuItem1;
         private System.Windows.Forms.MenuItem menuItemPause;
+        private System.Windows.Forms.MenuItem menuItemOptions;
+        private System.Windows.Forms.MenuItem menuItemLogin;
         
         private System.ComponentModel.IContainer components1;
 
@@ -28,18 +30,27 @@ namespace ClippyWindowsClient
             this.contextMenu1 = new System.Windows.Forms.ContextMenu();
             this.menuItem1 = new System.Windows.Forms.MenuItem();
             this.menuItemPause = new System.Windows.Forms.MenuItem();
+            this.menuItemOptions = new System.Windows.Forms.MenuItem();
+            this.menuItemLogin = new System.Windows.Forms.MenuItem();
 
             // Initialize contextMenu1 
             this.contextMenu1.MenuItems.AddRange(
-                        new System.Windows.Forms.MenuItem[] { this.menuItemPause, this.menuItem1 });
+                        new System.Windows.Forms.MenuItem[] { this.menuItemLogin, this.menuItemOptions, this.menuItemPause, this.menuItem1 });
 
-            
-            this.menuItemPause.Index = 0;
+            this.menuItemLogin.Index = 0;
+            this.menuItemLogin.Text = "L&ogin";
+            this.menuItemLogin.Click += new System.EventHandler(this.menuItemLogin_Click);
+
+            this.menuItemPause.Index = 1;
             this.menuItemPause.Text = "P&ause";
             this.menuItemPause.Click += new System.EventHandler(this.menuItemPause_Click);
 
+            this.menuItemOptions.Index = 2;
+            this.menuItemOptions.Text = "O&ptions";
+            this.menuItemOptions.Click += new System.EventHandler(this.menuItemOptions_Click);
+
             // Initialize menuItem1 
-            this.menuItem1.Index = 1;
+            this.menuItem1.Index = 3;
             this.menuItem1.Text = "E&xit";
             this.menuItem1.Click += new System.EventHandler(this.menuItem1_Click);
 
@@ -48,7 +59,7 @@ namespace ClippyWindowsClient
             this.Text = "Clippy Sync";
 
             // Create the NotifyIcon. 
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components1);
 
             // The Icon property sets the icon that will appear 
             // in the systray for this application.
@@ -66,10 +77,10 @@ namespace ClippyWindowsClient
             // Handle the DoubleClick event to activate the form.
             notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
 
+            
         }
 
         
-
         private void notifyIcon1_DoubleClick(object Sender, EventArgs e)
         {
             // Show the form when the user double clicks on the notify icon. 
@@ -92,6 +103,17 @@ namespace ClippyWindowsClient
         {
             // Pause the app TODO
         }
+
+        void menuItemLogin_Click(object sender, EventArgs e)
+        {
+            // TODO menu login
+        }
+
+        void menuItemOptions_Click(object sender, EventArgs e)
+        {
+            // TODO menu options
+        }
+
 
     }
 }
