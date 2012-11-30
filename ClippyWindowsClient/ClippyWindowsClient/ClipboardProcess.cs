@@ -26,7 +26,15 @@ namespace ClippyWindowsClient
         {
             while (_ThreadRunning == true)
             {
+                if (CredentialsStorage.Username != null)
+                {
+                    if (CredentialsStorage.Username.Length > 1)
+                    {
+                        // Check on the server
+                    }
+                }
 
+                Thread.Sleep(1000 * 5);
             }
         }
     }

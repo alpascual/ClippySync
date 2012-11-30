@@ -11,4 +11,13 @@ namespace ClippyWindowsClient
         public static string Username { get; set; }
         public static string Password { get; set; }
     }
+
+    public static class Server
+    {
+        public static string Url
+        {
+            get { return "http://localhost/something"; }
+        }
+
+    }
 }
