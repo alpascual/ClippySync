@@ -21,10 +21,14 @@ namespace ClippyWindowsClient
         
         private System.ComponentModel.IContainer components1;
 
+        private bool _closeForm = false;
+
 
         public Form1()
         {
             InitializeComponent();
+
+            this.FormClosing += Form1_FormClosing;
 
             this.components1 = new System.ComponentModel.Container();
             this.contextMenu1 = new System.Windows.Forms.ContextMenu();
@@ -80,6 +84,13 @@ namespace ClippyWindowsClient
             
         }
 
+        void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = !_closeForm;
+            if (_closeForm == false)
+                this.Hide();
+        }
+
         
         private void notifyIcon1_DoubleClick(object Sender, EventArgs e)
         {
@@ -96,6 +107,7 @@ namespace ClippyWindowsClient
         private void menuItem1_Click(object Sender, EventArgs e)
         {
             // Close the form, which closes the application. 
+            _closeForm = true;
             this.Close();
         }
 
@@ -107,6 +119,7 @@ namespace ClippyWindowsClient
         void menuItemLogin_Click(object sender, EventArgs e)
         {
             // TODO menu login
+            this.Show();
         }
 
         void menuItemOptions_Click(object sender, EventArgs e)
@@ -118,7 +131,7 @@ namespace ClippyWindowsClient
         {
             //TODO when click at the button, so hide
 
-            this.Hide();
+            
         }
 
 
