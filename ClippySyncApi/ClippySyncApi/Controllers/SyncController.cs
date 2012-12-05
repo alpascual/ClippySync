@@ -19,6 +19,11 @@ namespace ClippySyncApi.Controllers
             return View();
         }
 
+        public JsonResult Login(string Username, string Password, int version)
+        {
+            return Json(WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)), JsonRequestBehavior.AllowGet);
+        }
+
         public JsonResult SendClipboard(string Username, string Password, string Clipboard, int version)
         {
             if (WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)) == true)

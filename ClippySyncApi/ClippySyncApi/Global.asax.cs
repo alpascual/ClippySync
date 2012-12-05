@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebMatrix.WebData;
 
 namespace ClippySyncApi
 {
@@ -23,6 +24,8 @@ namespace ClippySyncApi
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+
+            WebSecurity.InitializeDatabaseConnection("DefaultConnection", "ClippySyncUsers", "UserID", "Username", true);
         }
     }
 }

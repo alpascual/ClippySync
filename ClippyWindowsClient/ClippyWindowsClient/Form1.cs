@@ -118,7 +118,7 @@ namespace ClippyWindowsClient
 
         void menuItemLogin_Click(object sender, EventArgs e)
         {
-            // TODO menu login
+            // Show login dialog box
             this.Show();
         }
 
@@ -129,8 +129,16 @@ namespace ClippyWindowsClient
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            //TODO when click at the button, so hide
+            CredentialsStorage.Username = textBox_Username.Text;
+            CredentialsStorage.Password = textBox_Password.Text;
 
+            ServerProtocol server = new ServerProtocol();
+            bool bReturn = server.ServerLogin(CredentialsStorage.Username, CredentialsStorage.Password);
+
+
+            this.Hide();
+
+            //TODO when click go to the server
             
         }
 
