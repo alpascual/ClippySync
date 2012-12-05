@@ -18,6 +18,7 @@ namespace ClippyWindowsClient
         private System.Windows.Forms.MenuItem menuItemPause;
         private System.Windows.Forms.MenuItem menuItemOptions;
         private System.Windows.Forms.MenuItem menuItemLogin;
+
         
         private System.ComponentModel.IContainer components1;
 
@@ -36,7 +37,7 @@ namespace ClippyWindowsClient
             this.menuItemPause = new System.Windows.Forms.MenuItem();
             this.menuItemOptions = new System.Windows.Forms.MenuItem();
             this.menuItemLogin = new System.Windows.Forms.MenuItem();
-
+            
             // Initialize contextMenu1 
             this.contextMenu1.MenuItems.AddRange(
                         new System.Windows.Forms.MenuItem[] { this.menuItemLogin, this.menuItemOptions, this.menuItemPause, this.menuItem1 });
@@ -140,6 +141,11 @@ namespace ClippyWindowsClient
 
             //TODO when click go to the server
             
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // TODO Register
         }
 
 
