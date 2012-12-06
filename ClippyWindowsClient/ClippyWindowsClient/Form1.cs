@@ -146,6 +146,8 @@ namespace ClippyWindowsClient
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             // TODO Register
+            // Open a browser to the webpage.
+
         }
 
 

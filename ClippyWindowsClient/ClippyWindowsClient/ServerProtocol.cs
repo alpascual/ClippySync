@@ -16,6 +16,11 @@ namespace ClippyWindowsClient
             return true;
         }
 
+        public string RegistrationUrl()
+        {
+            return Server.Url.Replace("sync/", ")
+        }
+
         private string RequestToServer(string sUrlRequest)
         {
             string sUrl = Server.Url + sUrlRequest;
