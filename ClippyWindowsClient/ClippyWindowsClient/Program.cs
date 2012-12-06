@@ -27,11 +27,25 @@ namespace ClippyWindowsClient
 
         }
 
+        static double lastnumber;
+        static string _lastText = "";
+
         static void _clipboardTimer_Tick(object sender, EventArgs e)
         {
             if (System.Windows.Forms.Clipboard.ContainsText())
             {
                 string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
+                if (sTextOnClipboard != _lastText)
+                {
+                    // Send to server
+                    ServerProtocol protocol = new ServerProtocol();
+                    lastnumber = protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
+                    if (lastnumber > 0)
+                    {
+                        //if successful
+                        _lastText = sTextOnClipboard;
+                    }
+                }
             }
         }
     }
