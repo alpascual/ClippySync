@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClippySyncServer.Filters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,6 +9,7 @@ using System.Web.Security;
 
 namespace ClippySyncServer.Models
 {
+    [InitializeSimpleMembership]
     public class SyncModel : DbContext
     {
         public SyncModel()

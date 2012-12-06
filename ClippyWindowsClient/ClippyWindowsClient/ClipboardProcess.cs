@@ -20,8 +20,13 @@ namespace ClippyWindowsClient
         {
             tServer = new Thread(ProcessMethod);
             tClipboard = new Thread(ProcessClipboard);
+            tClipboard.IsBackground = false;
+            tClipboard.Priority = ThreadPriority.Highest;
+            
             if (_ThreadRunning == false)
             {
+                System.Windows.Forms.Clipboard.Clear();
+
                 _ThreadRunning = true;
                 tServer.Start();
                 tClipboard.Start();
@@ -53,20 +58,35 @@ namespace ClippyWindowsClient
             }
         }
 
+        [STAThread]
         public void ProcessClipboard()
         {
             while (_ThreadRunning == true)
             {
-                if (System.Windows.Forms.Clipboard.ContainsText())
+                if (CredentialsStorage.Username != null)
                 {
-                    string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
-                    if (sTextOnClipboard != _lastText)
+                    if (CredentialsStorage.Username.Length > 1)
                     {
-                        // Send to server
+                        
+                        if (System.Windows.Forms.Clipboard.ContainsText())
+                        {
+                            string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
+                            if (sTextOnClipboard != _lastText)
+                            {
+                                // Send to server
+                                ServerProtocol protocol = new ServerProtocol();
+                                protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
 
-                        //if successful
-                        _lastText = sTextOnClipboard;
-                    }                    
+                                //if successful
+                                _lastText = sTextOnClipboard;
+                            }
+                        }
+
+                        if (System.Windows.Forms.Clipboard.GetDataObject() != null)
+                        {
+
+                        }
+                    }
                 }
 
                 Thread.Sleep(1000 * 2);

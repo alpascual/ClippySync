@@ -8,6 +8,7 @@ namespace ClippyWindowsClient
 {
     static class Program
     {
+        static System.Windows.Forms.Timer _clipboardTimer;
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +17,22 @@ namespace ClippyWindowsClient
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            _clipboardTimer = new Timer();
+            _clipboardTimer.Interval = 1000 * 5;
+            _clipboardTimer.Tick += _clipboardTimer_Tick;
+            _clipboardTimer.Start();
+
             Application.Run(new Form1());
+
+        }
+
+        static void _clipboardTimer_Tick(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Clipboard.ContainsText())
+            {
+                string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
+            }
         }
     }
 }

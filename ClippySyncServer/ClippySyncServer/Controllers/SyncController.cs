@@ -13,6 +13,7 @@ using ClippySyncServer.Models;
 using ClippySyncServer.Code;
 namespace ClippySyncServer.Controllers
 {
+    [InitializeSimpleMembership]
     public class SyncController : Controller
     {
         //
