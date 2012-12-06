@@ -32,18 +32,27 @@ namespace ClippyWindowsClient
 
         static void _clipboardTimer_Tick(object sender, EventArgs e)
         {
-            if (System.Windows.Forms.Clipboard.ContainsText())
+            if (CredentialsStorage.Username != null)
             {
-                string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
-                if (sTextOnClipboard != _lastText)
+                if (CredentialsStorage.Username.Length > 1)
                 {
-                    // Send to server
-                    ServerProtocol protocol = new ServerProtocol();
-                    lastnumber = protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
-                    if (lastnumber > 0)
+                    if (System.Windows.Forms.Clipboard.ContainsText())
                     {
-                        //if successful
-                        _lastText = sTextOnClipboard;
+                        string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
+                        if (sTextOnClipboard != _lastText)
+                        {
+                            // Send to server
+                            ServerProtocol protocol = new ServerProtocol();
+                            lastnumber = protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
+                            if (lastnumber > 0)
+                            {
+                                //if successful
+                                _lastText = sTextOnClipboard;
+                                CredentialsStorage.LastNumber = lastnumber;
+
+                                //TODO maybe some feedback to the user?
+                            }
+                        }
                     }
                 }
             }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -33,6 +34,21 @@ namespace ClippyWindowsClient
             }
 
             return SyncID;
+        }
+
+        public string GetTextFromClipboard(string Username, string Password, double SequenceNumber)
+        {
+            string sRequestString = "GetClipboard?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) +
+                                    "&SequenceNumber=" + SequenceNumber + "&version=1";
+
+            string sResponse = RequestToServer(sRequestString);
+            //Person myPerson = new Person();
+            //MemoryStream ms = new MemoryStream(Encoding.Unicode.GetBytes(json));
+            //System.Runtime.Serialization.Json.DataContractJsonSerializer serializer = new System.Runtime.Serialization.Json.DataContractJsonSerializer(myPerson.GetType());
+            //myPerson = serializer.ReadObject(ms) as Person;
+            //ms.Close();
+
+            return sResponse;
         }
 
         public string RegistrationUrl()

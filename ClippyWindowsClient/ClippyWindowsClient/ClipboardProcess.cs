@@ -11,23 +11,17 @@ namespace ClippyWindowsClient
     {
 
         private bool _ThreadRunning = false;
-        double lastnumber;
-        
         Thread tServer;
-        string _lastText = "";
+        
 
         public void Start()
         {
             tServer = new Thread(ProcessMethod);
-        
             
             if (_ThreadRunning == false)
             {
-                System.Windows.Forms.Clipboard.Clear();
-
                 _ThreadRunning = true;
-                tServer.Start();
-                
+                tServer.Start();                
             }
         }
 
@@ -41,6 +35,7 @@ namespace ClippyWindowsClient
 
         public void ProcessMethod()
         {
+            ServerProtocol protocol = new ServerProtocol();
             while (_ThreadRunning == true)
             {
                 if (CredentialsStorage.Username != null)
@@ -48,6 +43,18 @@ namespace ClippyWindowsClient
                     if (CredentialsStorage.Username.Length > 1)
                     {
                         // Check on the server
+                        string clipBoardText = protocol.GetTextFromClipboard(CredentialsStorage.Username, CredentialsStorage.Password, CredentialsStorage.LastNumber);
+
+                        try
+                        {
+                            SyncItem item = JSONHelper.Deserialize<SyncItem>(clipBoardText);
+
+                            CredentialsStorage.LastNumber = item.SyncID;
+                            System.Windows.Forms.Clipboard.SetText(item.ClipboardData);                           
+
+                        }
+                        catch { }
+                        
                     }
                 }
 
