@@ -16,6 +16,25 @@ namespace ClippyWindowsClient
             return true;
         }
 
+        public double SendTextToClipboard(string Username, string Password, string sClipboard)
+        {
+            string sRequestString = "SendClipboard?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Clipboard=" + Encrypter.base64Encode(sClipboard) + "&Version=1";
+            string sResponse = RequestToServer(sRequestString);
+
+            double SyncID = 0;
+            try
+            {
+                Console.WriteLine("DEBUG: response: " + sResponse);
+                SyncID = Convert.ToDouble(sResponse);
+            }
+            catch
+            {
+                SyncID = -1;
+            }
+
+            return SyncID;
+        }
+
         public string RegistrationUrl()
         {
             return Server.Url.Replace("sync/", "Account/Register");
