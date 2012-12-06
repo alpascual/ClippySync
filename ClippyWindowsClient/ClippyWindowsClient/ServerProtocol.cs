@@ -18,7 +18,7 @@ namespace ClippyWindowsClient
 
         public string RegistrationUrl()
         {
-            return Server.Url.Replace("sync/", ")
+            return Server.Url.Replace("sync/", "Account/Register");
         }
 
         private string RequestToServer(string sUrlRequest)
@@ -34,7 +34,7 @@ namespace ClippyWindowsClient
     {
         public static string Url
         {
-            get { return "http://localhost:1582/sync/"; }
+            get { return "http://localhost:17905/sync/"; }
         }
 
     }

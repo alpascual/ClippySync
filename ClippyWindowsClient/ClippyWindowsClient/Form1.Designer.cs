@@ -35,6 +35,7 @@
             this.button_login = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.labelIncorrectPassword = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@
             // button_login
             // 
             this.button_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_login.Location = new System.Drawing.Point(117, 149);
+            this.button_login.Location = new System.Drawing.Point(117, 165);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(155, 35);
             this.button_login.TabIndex = 4;
@@ -97,7 +98,7 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(114, 203);
+            this.linkLabel1.Location = new System.Drawing.Point(114, 211);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(89, 13);
             this.linkLabel1.TabIndex = 6;
@@ -105,12 +106,23 @@
             this.linkLabel1.Text = "Register Account";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // labelIncorrectPassword
+            // 
+            this.labelIncorrectPassword.AutoSize = true;
+            this.labelIncorrectPassword.ForeColor = System.Drawing.Color.Red;
+            this.labelIncorrectPassword.Location = new System.Drawing.Point(117, 146);
+            this.labelIncorrectPassword.Name = "labelIncorrectPassword";
+            this.labelIncorrectPassword.Size = new System.Drawing.Size(104, 13);
+            this.labelIncorrectPassword.TabIndex = 7;
+            this.labelIncorrectPassword.Text = "Incorrect Credentials";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.labelIncorrectPassword);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button_login);
@@ -135,6 +147,7 @@
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label labelIncorrectPassword;
 
     }
 }

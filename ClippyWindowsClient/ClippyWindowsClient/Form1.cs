@@ -23,6 +23,7 @@ namespace ClippyWindowsClient
         private System.ComponentModel.IContainer components1;
 
         private bool _closeForm = false;
+        private ClipboardProcess _clipboardProcess = new ClipboardProcess();
 
 
         public Form1()
@@ -136,10 +137,19 @@ namespace ClippyWindowsClient
             ServerProtocol server = new ServerProtocol();
             bool bReturn = server.ServerLogin(CredentialsStorage.Username, CredentialsStorage.Password);
 
+            if (bReturn == true)
+            {
+                this.labelIncorrectPassword.Visible = false;
+                this.Hide();
 
-            this.Hide();
+                _clipboardProcess.Start();
+            }
 
-            //TODO when click go to the server
+            else
+            {
+                this.labelIncorrectPassword.Visible = true;
+                _clipboardProcess.Stop();
+            }
             
         }
 
@@ -147,6 +157,12 @@ namespace ClippyWindowsClient
         {
             // TODO Register
             // Open a browser to the webpage.
+
+            ServerProtocol server = new ServerProtocol();
+            WebForm2 form = new WebForm2();
+
+            form.OpenWebBrowser(server.RegistrationUrl());
+            form.Show();
 
         }
 
