@@ -44,13 +44,13 @@ namespace ClippyWindowsClient
                     {
                         // Check on the server
                         string clipBoardText = protocol.GetTextFromClipboard(CredentialsStorage.Username, CredentialsStorage.Password, CredentialsStorage.LastNumber);
-
                         try
                         {
                             SyncItem item = JSONHelper.Deserialize<SyncItem>(clipBoardText);
 
                             CredentialsStorage.LastNumber = item.SyncID;
-                            System.Windows.Forms.Clipboard.SetText(item.ClipboardData);                           
+                            CredentialsStorage.ClipboardData = item.ClipboardData;
+                                                       
 
                         }
                         catch { }

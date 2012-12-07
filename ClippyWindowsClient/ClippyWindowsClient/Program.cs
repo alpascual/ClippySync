@@ -36,8 +36,16 @@ namespace ClippyWindowsClient
             {
                 if (CredentialsStorage.Username.Length > 1)
                 {
-                    if (System.Windows.Forms.Clipboard.ContainsText())
+                    //Check if there is something from Clipboard.
+                    if (_lastText != CredentialsStorage.ClipboardData && CredentialsStorage.ClipboardData != null)
                     {
+                        System.Windows.Forms.Clipboard.SetText(CredentialsStorage.ClipboardData);
+                        _lastText = CredentialsStorage.ClipboardData;
+                    }
+
+                    //Check if nothing new is in the clipboard.
+                    if (System.Windows.Forms.Clipboard.ContainsText())
+                    {   
                         string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
                         if (sTextOnClipboard != _lastText)
                         {

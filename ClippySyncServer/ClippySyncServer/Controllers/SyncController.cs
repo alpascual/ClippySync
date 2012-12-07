@@ -35,12 +35,22 @@ namespace ClippySyncServer.Controllers
             {
                 int UserId = WebSecurity.GetUserId(Encrypter.base64Decode(Username));
 
+                // Can I decode?
+                string cleanClipboard = "";
+                try
+                {
+                    cleanClipboard = Encrypter.base64Decode(Clipboard);
+                }
+                catch
+                {
+                    return Json(-1, JsonRequestBehavior.AllowGet);
+                }
                 // Business Logic to add the content on the database
                 SyncModel sync = new SyncModel();
                 SyncUser myUser = new SyncUser()
                 {
                     UserId = UserId,
-                    ClipboardData = Encrypter.base64Decode(Clipboard)
+                    ClipboardData = cleanClipboard
                 };
 
                 sync.SyncUsers.Add(myUser);
@@ -69,7 +79,7 @@ namespace ClippySyncServer.Controllers
 
                     if (checkIfAny.Count > 0)
                     {
-                        SyncUser userClipboard = checkIfAny[0];
+                        SyncUser userClipboard = checkIfAny[checkIfAny.Count-1];
                         return Json(userClipboard, JsonRequestBehavior.AllowGet);
                     }
 
@@ -77,6 +87,17 @@ namespace ClippySyncServer.Controllers
                     System.Threading.Thread.Sleep(1000 * 10);
                     timeout++;
                 }
+
+                // delete old stuff from the users
+                var toDelete = (from c in sync.SyncUsers
+                                 where c.UserId == UserId &
+                                 c.SyncID < SequenceNumber - 1
+                                 select c).ToList();
+                for (int i = 0; i < toDelete.Count; i++)
+                    sync.SyncUsers.Remove(toDelete[i]);
+
+                sync.SaveChanges();
+
             }
             return Json("", JsonRequestBehavior.AllowGet);
         }
