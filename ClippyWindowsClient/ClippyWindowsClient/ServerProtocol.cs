@@ -71,7 +71,8 @@ namespace ClippyWindowsClient
     {
         public static string Url
         {
-            get { return "http://localhost:17905/sync/"; }
+            //get { return "http://localhost:17905/sync/"; }
+            get { return "http://clippy.azurewebsites.net/sync/"; }
         }
 
     }
