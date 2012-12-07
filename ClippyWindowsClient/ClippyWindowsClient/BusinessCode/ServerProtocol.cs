@@ -14,7 +14,10 @@ namespace ClippyWindowsClient
         {   
             string sResponse = RequestToServer("Register?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
 
-            return Convert.ToBoolean(sResponse);
+            if (sResponse == "")
+                return true;
+
+            return false;
         }
         public bool ServerLogin(string Username, string Password)
         {

@@ -155,15 +155,8 @@ namespace ClippyWindowsClient
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // TODO Register
-            // Open a browser to the webpage.
-
-            ServerProtocol server = new ServerProtocol();
-            WebForm2 form = new WebForm2();
-
-            form.OpenWebBrowser(server.RegistrationUrl());
-            form.Show();
-
+            RegistrationForm registration = new RegistrationForm();
+            registration.Show();
         }
 
 
