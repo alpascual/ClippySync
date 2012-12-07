@@ -131,6 +131,16 @@ namespace ClippyWindowsClient
 
         private void button_login_Click(object sender, EventArgs e)
         {
+            if (this.menuItemLogin.Text == "Logout")
+            {
+                this.menuItemLogin.Text = "Login";
+                CredentialsStorage.Username = "";
+                CredentialsStorage.Password = "";
+
+                _clipboardProcess.Stop();
+
+                return;
+            }
             CredentialsStorage.Username = textBox_Username.Text;
             CredentialsStorage.Password = textBox_Password.Text;
 
@@ -141,6 +151,8 @@ namespace ClippyWindowsClient
             {
                 this.labelIncorrectPassword.Visible = false;
                 this.Hide();
+
+                this.menuItemLogin.Text = "Logout";
 
                 _clipboardProcess.Start();
             }
