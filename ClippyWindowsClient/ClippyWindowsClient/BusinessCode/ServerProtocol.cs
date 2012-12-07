@@ -10,11 +10,17 @@ namespace ClippyWindowsClient
 {
     public class ServerProtocol
     {
+        public bool ServerRegistration(string Username, string Password)
+        {   
+            string sResponse = RequestToServer("Register?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
+
+            return Convert.ToBoolean(sResponse);
+        }
         public bool ServerLogin(string Username, string Password)
         {
              string sResponse = RequestToServer("Login?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
 
-            return true;
+             return Convert.ToBoolean(sResponse);
         }
 
         public double SendTextToClipboard(string Username, string Password, string sClipboard)

@@ -24,6 +24,19 @@ namespace ClippySyncServer.Controllers
             return View();
         }
 
+        public JsonResult Register(string Username, string Password, int version)
+        {
+            try
+            {
+                return Json(WebSecurity.CreateUserAndAccount(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)),
+                    JsonRequestBehavior.AllowGet);
+            }
+            catch (MembershipCreateUserException e)
+            {
+                return Json(e.Message, JsonRequestBehavior.AllowGet);
+            }
+        }
+
         public JsonResult Login(string Username, string Password, int version)
         {
             return Json(WebSecurity.Login(Encrypter.base64Decode(Username), Encrypter.base64Decode(Password)), JsonRequestBehavior.AllowGet);

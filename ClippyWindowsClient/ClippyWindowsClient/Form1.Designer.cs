@@ -91,9 +91,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(13, 68);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 24);
+            this.label3.Size = new System.Drawing.Size(57, 24);
             this.label3.TabIndex = 5;
-            this.label3.Text = "Username";
+            this.label3.Text = "Email";
             // 
             // linkLabel1
             // 
@@ -115,6 +115,7 @@
             this.labelIncorrectPassword.Size = new System.Drawing.Size(104, 13);
             this.labelIncorrectPassword.TabIndex = 7;
             this.labelIncorrectPassword.Text = "Incorrect Credentials";
+            this.labelIncorrectPassword.Visible = false;
             // 
             // Form1
             // 

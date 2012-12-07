@@ -50,8 +50,6 @@ namespace ClippyWindowsClient
 
                             CredentialsStorage.LastNumber = item.SyncID;
                             CredentialsStorage.ClipboardData = item.ClipboardData;
-                                                       
-
                         }
                         catch { }
                         
