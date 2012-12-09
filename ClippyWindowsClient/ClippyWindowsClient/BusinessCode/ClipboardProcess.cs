@@ -20,17 +20,20 @@ namespace ClippyWindowsClient
             
             if (_ThreadRunning == false)
             {
-                _ThreadRunning = true;
+                CredentialsStorage.ClipboardRunning = _ThreadRunning = true;
                 tServer.Start();                
             }
         }
 
         public void Stop()
         {
-            tServer.Abort();
-            tServer = null;
-          
-            _ThreadRunning = false;
+            if (_ThreadRunning == true)
+            {
+                tServer.Abort();
+                tServer = null;
+            }
+
+            CredentialsStorage.ClipboardRunning = _ThreadRunning = false;
         }
 
         public void ProcessMethod()

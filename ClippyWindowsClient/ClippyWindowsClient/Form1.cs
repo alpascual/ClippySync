@@ -83,7 +83,6 @@ namespace ClippyWindowsClient
             // Handle the DoubleClick event to activate the form.
             notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
 
-            
         }
 
         void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -116,6 +115,16 @@ namespace ClippyWindowsClient
         private void menuItemPause_Click(object Sender, EventArgs e)
         {
             // Pause the app TODO
+            if (this.menuItemPause.Text == "Play")
+            {
+                this.menuItemPause.Text = "P&ause";
+                _clipboardProcess.Start();
+            }
+            else
+            {
+                this.menuItemPause.Text = "Play";
+                _clipboardProcess.Stop();
+            }
         }
 
         void menuItemLogin_Click(object sender, EventArgs e)
@@ -131,6 +140,8 @@ namespace ClippyWindowsClient
 
         private void button_login_Click(object sender, EventArgs e)
         {
+            this.button_login.Enabled = false;
+
             if (this.menuItemLogin.Text == "Logout")
             {
                 this.menuItemLogin.Text = "Login";
@@ -139,6 +150,7 @@ namespace ClippyWindowsClient
 
                 _clipboardProcess.Stop();
 
+                this.button_login.Enabled = true;
                 return;
             }
             CredentialsStorage.Username = textBox_Username.Text;
@@ -162,6 +174,8 @@ namespace ClippyWindowsClient
                 this.labelIncorrectPassword.Visible = true;
                 _clipboardProcess.Stop();
             }
+
+            this.button_login.Enabled = true;
             
         }
 

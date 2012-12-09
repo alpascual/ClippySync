@@ -133,7 +133,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Login";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.ResumeLayout(false);
             this.PerformLayout();
 

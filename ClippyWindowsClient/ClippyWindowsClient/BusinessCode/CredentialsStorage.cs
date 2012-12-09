@@ -12,6 +12,7 @@ namespace ClippyWindowsClient
         public static string Password { get; set; }
         public static double LastNumber { get; set; }
         public static string ClipboardData { get; set; }
+        public static bool ClipboardRunning { get; set; }
 
     }
 

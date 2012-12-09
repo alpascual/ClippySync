@@ -32,38 +32,42 @@ namespace ClippyWindowsClient
 
         static void _clipboardTimer_Tick(object sender, EventArgs e)
         {
-            if (CredentialsStorage.Username != null)
+            if (CredentialsStorage.ClipboardRunning == true)
             {
-                if (CredentialsStorage.Username.Length > 1)
+                if (CredentialsStorage.Username != null)
                 {
-                    //Check if there is something from Clipboard.
-                    if (_lastText != CredentialsStorage.ClipboardData && CredentialsStorage.ClipboardData != null)
+                    if (CredentialsStorage.Username.Length > 1)
                     {
-                        System.Windows.Forms.Clipboard.SetText(CredentialsStorage.ClipboardData);
-                        _lastText = CredentialsStorage.ClipboardData;
-                    }
-
-                    //Check if nothing new is in the clipboard.
-                    if (System.Windows.Forms.Clipboard.ContainsText())
-                    {   
-                        string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
-                        if (sTextOnClipboard != _lastText)
+                        //Check if there is something from Clipboard.
+                        if (_lastText != CredentialsStorage.ClipboardData && CredentialsStorage.ClipboardData != null)
                         {
-                            // Send to server
-                            ServerProtocol protocol = new ServerProtocol();
-                            lastnumber = protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
-                            if (lastnumber > 0)
-                            {
-                                //if successful
-                                _lastText = sTextOnClipboard;
-                                CredentialsStorage.LastNumber = lastnumber;
+                            System.Windows.Forms.Clipboard.SetText(CredentialsStorage.ClipboardData);
+                            _lastText = CredentialsStorage.ClipboardData;
+                        }
 
-                                //TODO maybe some feedback to the user?
+                        //Check if nothing new is in the clipboard.
+                        if (System.Windows.Forms.Clipboard.ContainsText())
+                        {
+                            string sTextOnClipboard = System.Windows.Forms.Clipboard.GetText();
+                            if (sTextOnClipboard != _lastText)
+                            {
+                                // Send to server
+                                ServerProtocol protocol = new ServerProtocol();
+                                lastnumber = protocol.SendTextToClipboard(CredentialsStorage.Username, CredentialsStorage.Password, sTextOnClipboard);
+                                if (lastnumber > 0)
+                                {
+                                    //if successful
+                                    _lastText = sTextOnClipboard;
+                                    CredentialsStorage.LastNumber = lastnumber;
+
+                                    //TODO maybe some feedback to the user?
+                                }
                             }
                         }
                     }
                 }
             }
         }
+
     }
 }
