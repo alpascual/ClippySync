@@ -15,6 +15,8 @@ namespace ClippyWindowsClient
         public OptionForm()
         {
             InitializeComponent();
+
+            this.textBox1.Text = Program._lastText;
         }
     }
 }

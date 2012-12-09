@@ -28,7 +28,7 @@ namespace ClippyWindowsClient
         }
 
         static double lastnumber;
-        static string _lastText = "";
+        public static string _lastText = "";
 
         static void _clipboardTimer_Tick(object sender, EventArgs e)
         {

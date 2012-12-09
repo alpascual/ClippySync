@@ -136,6 +136,8 @@ namespace ClippyWindowsClient
         void menuItemOptions_Click(object sender, EventArgs e)
         {
             // TODO menu options
+            OptionForm option = new OptionForm();
+            option.Show();
         }
 
         private void button_login_Click(object sender, EventArgs e)
