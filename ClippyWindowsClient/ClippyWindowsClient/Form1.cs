@@ -66,6 +66,7 @@ namespace ClippyWindowsClient
 
             // Create the NotifyIcon. 
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components1);
+            CredentialsStorage.notifyIcon = notifyIcon1;
 
             // The Icon property sets the icon that will appear 
             // in the systray for this application.

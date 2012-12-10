@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ClippyWindowsClient
 {
@@ -13,6 +14,7 @@ namespace ClippyWindowsClient
         public static double LastNumber { get; set; }
         public static string ClipboardData { get; set; }
         public static bool ClipboardRunning { get; set; }
+        public static NotifyIcon notifyIcon { get; set; }
 
     }
 

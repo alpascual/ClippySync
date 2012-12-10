@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,9 +30,17 @@ namespace ClippyWindowsClient
 
         static double lastnumber;
         public static string _lastText = "";
+        public static bool _bRedIcon = false;
 
         static void _clipboardTimer_Tick(object sender, EventArgs e)
         {
+            // reset red icon
+            if (_bRedIcon == true)
+            {
+                _bRedIcon = false;
+                CredentialsStorage.notifyIcon.Icon = new Icon("sync-image.ico");
+            }
+
             if (CredentialsStorage.ClipboardRunning == true)
             {
                 if (CredentialsStorage.Username != null)
@@ -43,6 +52,8 @@ namespace ClippyWindowsClient
                         {
                             System.Windows.Forms.Clipboard.SetText(CredentialsStorage.ClipboardData);
                             _lastText = CredentialsStorage.ClipboardData;
+                            CredentialsStorage.notifyIcon.Icon = new Icon("sync-image_red.ico");
+                            _bRedIcon = true;
                         }
 
                         //Check if nothing new is in the clipboard.
