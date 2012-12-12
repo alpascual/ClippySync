@@ -16,4 +16,9 @@
 @property (nonatomic,strong) NSImage *statusImage;
 @property (nonatomic,strong) NSImage *statusHighlighImage;
 
+- (IBAction)loginPressed:(id)sender;
+- (IBAction)pausePressed:(id)sender;
+- (IBAction)optionsPressed:(id)sender;
+
+
 @end
