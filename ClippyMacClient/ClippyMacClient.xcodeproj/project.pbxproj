@@ -13,8 +13,8 @@
 		8868EB8D1678EB710036A0DA /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB8B1678EB710036A0DA /* Credits.rtf */; };
 		8868EB901678EB710036A0DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EB8F1678EB710036A0DA /* AppDelegate.m */; };
 		8868EB931678EB710036A0DA /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB911678EB710036A0DA /* MainMenu.xib */; };
-		8868EB9C1678F31E0036A0DA /* sync-image.ico in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB9A1678F31E0036A0DA /* sync-image.ico */; };
-		8868EB9D1678F31E0036A0DA /* sync-image_red.ico in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB9B1678F31E0036A0DA /* sync-image_red.ico */; };
+		8868EBA016790C590036A0DA /* sync-image_red.png in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB9E16790C590036A0DA /* sync-image_red.png */; };
+		8868EBA116790C590036A0DA /* sync-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB9F16790C590036A0DA /* sync-image.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +31,8 @@
 		8868EB8E1678EB710036A0DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8868EB8F1678EB710036A0DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		8868EB921678EB710036A0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		8868EB9A1678F31E0036A0DA /* sync-image.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "sync-image.ico"; sourceTree = "<group>"; };
-		8868EB9B1678F31E0036A0DA /* sync-image_red.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = "sync-image_red.ico"; sourceTree = "<group>"; };
+		8868EB9E16790C590036A0DA /* sync-image_red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sync-image_red.png"; sourceTree = "<group>"; };
+		8868EB9F16790C590036A0DA /* sync-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sync-image.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,8 +110,8 @@
 		8868EB991678F31E0036A0DA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8868EB9A1678F31E0036A0DA /* sync-image.ico */,
-				8868EB9B1678F31E0036A0DA /* sync-image_red.ico */,
+				8868EB9E16790C590036A0DA /* sync-image_red.png */,
+				8868EB9F16790C590036A0DA /* sync-image.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -170,8 +170,8 @@
 				8868EB871678EB710036A0DA /* InfoPlist.strings in Resources */,
 				8868EB8D1678EB710036A0DA /* Credits.rtf in Resources */,
 				8868EB931678EB710036A0DA /* MainMenu.xib in Resources */,
-				8868EB9C1678F31E0036A0DA /* sync-image.ico in Resources */,
-				8868EB9D1678F31E0036A0DA /* sync-image_red.ico in Resources */,
+				8868EBA016790C590036A0DA /* sync-image_red.png in Resources */,
+				8868EBA116790C590036A0DA /* sync-image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

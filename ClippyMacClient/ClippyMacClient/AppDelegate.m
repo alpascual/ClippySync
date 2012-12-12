@@ -16,8 +16,8 @@
     
     NSBundle *bundle = [NSBundle mainBundle];
     
-    self.statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"sync-image" ofType:@"ico"]];
-    self.statusHighlighImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"sync-image" ofType:@"ico"]];
+    self.statusImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"sync-image" ofType:@"png"]];
+    self.statusHighlighImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForResource:@"sync-image_red" ofType:@"png"]];
     
     [self.statusItem setImage:self.statusImage];
     [self.statusItem setAlternateImage:self.statusHighlighImage];
