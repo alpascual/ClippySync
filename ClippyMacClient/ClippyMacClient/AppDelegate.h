@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "OptionsWindowController.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
@@ -15,6 +16,7 @@
 @property (nonatomic,strong) NSStatusItem *statusItem;
 @property (nonatomic,strong) NSImage *statusImage;
 @property (nonatomic,strong) NSImage *statusHighlighImage;
+@property (nonatomic,strong) OptionsWindowController *options;
 
 - (IBAction)loginPressed:(id)sender;
 - (IBAction)pausePressed:(id)sender;

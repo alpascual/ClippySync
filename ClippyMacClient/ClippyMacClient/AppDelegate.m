@@ -37,7 +37,9 @@
 }
 - (IBAction)optionsPressed:(id)sender
 {
+    self.options = [[OptionsWindowController alloc] initWithWindowNibName:@"OptionsWindowController"];
     
+    [self.options showWindow:self];
 }
 
 
