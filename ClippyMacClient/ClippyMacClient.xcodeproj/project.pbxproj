@@ -17,6 +17,8 @@
 		8868EBA116790C590036A0DA /* sync-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB9F16790C590036A0DA /* sync-image.png */; };
 		8868EBAA1679374D0036A0DA /* OptionsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EBA81679374D0036A0DA /* OptionsWindowController.m */; };
 		8868EBAB1679374D0036A0DA /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8868EBA91679374D0036A0DA /* OptionsWindowController.xib */; };
+		8868EBAF16793AD70036A0DA /* LoginWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EBAD16793AD70036A0DA /* LoginWindowController.m */; };
+		8868EBB016793AD70036A0DA /* LoginWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8868EBAE16793AD70036A0DA /* LoginWindowController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		8868EBA71679374D0036A0DA /* OptionsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OptionsWindowController.h; sourceTree = "<group>"; };
 		8868EBA81679374D0036A0DA /* OptionsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OptionsWindowController.m; sourceTree = "<group>"; };
 		8868EBA91679374D0036A0DA /* OptionsWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
+		8868EBAC16793AD70036A0DA /* LoginWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginWindowController.h; sourceTree = "<group>"; };
+		8868EBAD16793AD70036A0DA /* LoginWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginWindowController.m; sourceTree = "<group>"; };
+		8868EBAE16793AD70036A0DA /* LoginWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +104,9 @@
 				8868EBA71679374D0036A0DA /* OptionsWindowController.h */,
 				8868EBA81679374D0036A0DA /* OptionsWindowController.m */,
 				8868EBA91679374D0036A0DA /* OptionsWindowController.xib */,
+				8868EBAC16793AD70036A0DA /* LoginWindowController.h */,
+				8868EBAD16793AD70036A0DA /* LoginWindowController.m */,
+				8868EBAE16793AD70036A0DA /* LoginWindowController.xib */,
 			);
 			path = ClippyMacClient;
 			sourceTree = "<group>";
@@ -181,6 +189,7 @@
 				8868EBA016790C590036A0DA /* sync-image_red.png in Resources */,
 				8868EBA116790C590036A0DA /* sync-image.png in Resources */,
 				8868EBAB1679374D0036A0DA /* OptionsWindowController.xib in Resources */,
+				8868EBB016793AD70036A0DA /* LoginWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +203,7 @@
 				8868EB891678EB710036A0DA /* main.m in Sources */,
 				8868EB901678EB710036A0DA /* AppDelegate.m in Sources */,
 				8868EBAA1679374D0036A0DA /* OptionsWindowController.m in Sources */,
+				8868EBAF16793AD70036A0DA /* LoginWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

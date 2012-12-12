@@ -29,7 +29,9 @@
 
 - (IBAction)loginPressed:(id)sender
 {
+    self.login = [[LoginWindowController alloc] initWithWindowNibName:@"LoginWindowController"];
     
+    [self.login showWindow:self];
 }
 - (IBAction)pausePressed:(id)sender
 {
