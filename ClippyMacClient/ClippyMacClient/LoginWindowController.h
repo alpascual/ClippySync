@@ -10,4 +10,10 @@
 
 @interface LoginWindowController : NSWindowController
 
+@property (nonatomic, strong) IBOutlet NSTextField *textEmail;
+@property (nonatomic, strong) IBOutlet NSTextField *textPassword;
+@property (nonatomic, strong) IBOutlet NSTextField *textRepeatPassword;
+@property (nonatomic, strong) IBOutlet NSButton *buttonLogin;
+@property (nonatomic, strong) IBOutlet NSButton *buttonRegister;
+
 @end
