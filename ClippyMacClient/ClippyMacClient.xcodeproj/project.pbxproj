@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76F4AEF91681792700EA53C9 /* ServerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F4AEF81681792700EA53C9 /* ServerProtocol.m */; };
 		8868EB7D1678EB710036A0DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EB7C1678EB710036A0DA /* Cocoa.framework */; };
 		8868EB871678EB710036A0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB851678EB710036A0DA /* InfoPlist.strings */; };
 		8868EB891678EB710036A0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EB881678EB710036A0DA /* main.m */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76F4AEF71681792700EA53C9 /* ServerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerProtocol.h; sourceTree = "<group>"; };
+		76F4AEF81681792700EA53C9 /* ServerProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerProtocol.m; sourceTree = "<group>"; };
 		8868EB781678EB710036A0DA /* ClippyMacClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClippyMacClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8868EB7C1678EB710036A0DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8868EB7F1678EB710036A0DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -57,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76F4AEF5168178E100EA53C9 /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				76F4AEF71681792700EA53C9 /* ServerProtocol.h */,
+				76F4AEF81681792700EA53C9 /* ServerProtocol.m */,
+			);
+			name = BusinessLogic;
+			sourceTree = "<group>";
+		};
 		8868EB6D1678EB710036A0DA = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +108,7 @@
 		8868EB821678EB710036A0DA /* ClippyMacClient */ = {
 			isa = PBXGroup;
 			children = (
+				76F4AEF5168178E100EA53C9 /* BusinessLogic */,
 				8868EB991678F31E0036A0DA /* Resources */,
 				8868EB8E1678EB710036A0DA /* AppDelegate.h */,
 				8868EB8F1678EB710036A0DA /* AppDelegate.m */,
@@ -204,6 +217,7 @@
 				8868EB901678EB710036A0DA /* AppDelegate.m in Sources */,
 				8868EBAA1679374D0036A0DA /* OptionsWindowController.m in Sources */,
 				8868EBAF16793AD70036A0DA /* LoginWindowController.m in Sources */,
+				76F4AEF91681792700EA53C9 /* ServerProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +347,7 @@
 				8868EB981678EB710036A0DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
