@@ -14,6 +14,7 @@
 
 - (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)pasword
 {
+    
 #warning todo pass the server url and craete the protocol
 }
 - (NSString*) requestToServer:(NSString*)urlRequest

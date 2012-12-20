@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F01682CDA400A789EA /* ServerProtocol.m */; };
 		76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F31682CDCB00A789EA /* NSString+Addition.m */; };
+		76BAB2F71682CEE200A789EA /* NSData+NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */; };
 		8868EB7D1678EB710036A0DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EB7C1678EB710036A0DA /* Cocoa.framework */; };
 		8868EB871678EB710036A0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB851678EB710036A0DA /* InfoPlist.strings */; };
 		8868EB891678EB710036A0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EB881678EB710036A0DA /* main.m */; };
@@ -28,6 +29,8 @@
 		76BAB2F01682CDA400A789EA /* ServerProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerProtocol.m; sourceTree = "<group>"; };
 		76BAB2F21682CDCB00A789EA /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
 		76BAB2F31682CDCB00A789EA /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
+		76BAB2F51682CEE200A789EA /* NSData+NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSDataAdditions.h"; sourceTree = "<group>"; };
+		76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSDataAdditions.m"; sourceTree = "<group>"; };
 		8868EB781678EB710036A0DA /* ClippyMacClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClippyMacClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8868EB7C1678EB710036A0DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8868EB7F1678EB710036A0DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -70,6 +73,8 @@
 				76BAB2F31682CDCB00A789EA /* NSString+Addition.m */,
 				76BAB2EF1682CDA400A789EA /* ServerProtocol.h */,
 				76BAB2F01682CDA400A789EA /* ServerProtocol.m */,
+				76BAB2F51682CEE200A789EA /* NSData+NSDataAdditions.h */,
+				76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */,
 			);
 			name = BusinessLogic;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				8868EBAF16793AD70036A0DA /* LoginWindowController.m in Sources */,
 				76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */,
 				76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */,
+				76BAB2F71682CEE200A789EA /* NSData+NSDataAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,5 +1,5 @@
 //
-//  NSString+Addition.h
+//  NSData+NSDataAdditions.h
 //  ClippyMacClient
 //
 //  Created by Albert Pascual on 12/19/12.
@@ -8,8 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (NSStringAdditions)
+@class NSString;
 
-+ (NSString *) encodeBase64StringFromData:(NSData *)data length:(int)length;
+@interface NSData (NSDataAdditions)
+
++ (NSData *) decodingBase64DataFromString:(NSString *)string;
 
 @end
