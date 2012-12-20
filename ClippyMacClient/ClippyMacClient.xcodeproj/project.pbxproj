@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		76F4AEF91681792700EA53C9 /* ServerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F4AEF81681792700EA53C9 /* ServerProtocol.m */; };
+		76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F01682CDA400A789EA /* ServerProtocol.m */; };
+		76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F31682CDCB00A789EA /* NSString+Addition.m */; };
 		8868EB7D1678EB710036A0DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EB7C1678EB710036A0DA /* Cocoa.framework */; };
 		8868EB871678EB710036A0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB851678EB710036A0DA /* InfoPlist.strings */; };
 		8868EB891678EB710036A0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EB881678EB710036A0DA /* main.m */; };
@@ -23,8 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		76F4AEF71681792700EA53C9 /* ServerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerProtocol.h; sourceTree = "<group>"; };
-		76F4AEF81681792700EA53C9 /* ServerProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerProtocol.m; sourceTree = "<group>"; };
+		76BAB2EF1682CDA400A789EA /* ServerProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerProtocol.h; sourceTree = "<group>"; };
+		76BAB2F01682CDA400A789EA /* ServerProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerProtocol.m; sourceTree = "<group>"; };
+		76BAB2F21682CDCB00A789EA /* NSString+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Addition.h"; sourceTree = "<group>"; };
+		76BAB2F31682CDCB00A789EA /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		8868EB781678EB710036A0DA /* ClippyMacClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClippyMacClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8868EB7C1678EB710036A0DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8868EB7F1678EB710036A0DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -63,8 +66,10 @@
 		76F4AEF5168178E100EA53C9 /* BusinessLogic */ = {
 			isa = PBXGroup;
 			children = (
-				76F4AEF71681792700EA53C9 /* ServerProtocol.h */,
-				76F4AEF81681792700EA53C9 /* ServerProtocol.m */,
+				76BAB2F21682CDCB00A789EA /* NSString+Addition.h */,
+				76BAB2F31682CDCB00A789EA /* NSString+Addition.m */,
+				76BAB2EF1682CDA400A789EA /* ServerProtocol.h */,
+				76BAB2F01682CDA400A789EA /* ServerProtocol.m */,
 			);
 			name = BusinessLogic;
 			sourceTree = "<group>";
@@ -217,7 +222,8 @@
 				8868EB901678EB710036A0DA /* AppDelegate.m in Sources */,
 				8868EBAA1679374D0036A0DA /* OptionsWindowController.m in Sources */,
 				8868EBAF16793AD70036A0DA /* LoginWindowController.m in Sources */,
-				76F4AEF91681792700EA53C9 /* ServerProtocol.m in Sources */,
+				76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */,
+				76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +272,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -277,6 +284,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -295,11 +303,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -308,9 +318,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ClippyMacClient/ClippyMacClient-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ClippyMacClient/ClippyMacClient-Info.plist";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -320,9 +331,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ClippyMacClient/ClippyMacClient-Prefix.pch";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = "ClippyMacClient/ClippyMacClient-Info.plist";
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
