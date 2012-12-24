@@ -32,13 +32,13 @@
 }
 
 - (IBAction) loginPress
-{
-    
+{    
+    [self.serverProtocol serverLogin:self.textEmail.value Pasword:self.textPassword.value];
 }
 
 - (IBAction) registerPress
 {
-    
+    [self.serverProtocol serverRegistration:self.textEmail.value Password:self.textPassword.value];
 }
 
 @end

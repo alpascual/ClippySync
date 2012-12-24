@@ -1343,14 +1343,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">terminate:</string>
-						<reference key="source" ref="1050"/>
-						<reference key="destination" ref="766003909"/>
-					</object>
-					<int key="connectionID">547</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
 						<string key="label">orderFrontStandardAboutPanel:</string>
 						<reference key="source" ref="1021"/>
 						<reference key="destination" ref="238522557"/>
@@ -2044,6 +2036,14 @@
 						<reference key="destination" ref="562287367"/>
 					</object>
 					<int key="connectionID">546</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">quitPresses:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="766003909"/>
+					</object>
+					<int key="connectionID">548</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3225,7 +3225,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">547</int>
+			<int key="maxID">548</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -3236,6 +3236,7 @@
 						<string key="loginPressed:">id</string>
 						<string key="optionsPressed:">id</string>
 						<string key="pausePressed:">id</string>
+						<string key="quitPresses:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="loginPressed:">
@@ -3248,6 +3249,10 @@
 						</object>
 						<object class="IBActionInfo" key="pausePressed:">
 							<string key="name">pausePressed:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="quitPresses:">
+							<string key="name">quitPresses:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>

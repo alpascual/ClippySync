@@ -42,8 +42,27 @@ static const short _base64DecodingTable[256] = {
     NSString *loginUrl = [[NSString alloc] initWithFormat:@"Login?username=%@&Password=%@&Version=1", encodedUsername, encodedPassword];
     
     NSString *response = [self requestToServer:loginUrl];
+    NSLog(@"Login Response is %@", response);
     
+    
+    return YES;
 }
+
+- (BOOL) serverRegistration:(NSString *)username Password:(NSString*)password
+{
+    //"Register?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1")
+    
+    NSString *encodedUsername = [ServerProtocol encodeBase64WithString:username];
+    NSString *encodedPassword = [ServerProtocol encodeBase64WithString:password];
+    
+    NSString *registrationUrl = [[NSString alloc] initWithFormat:@"Register?username=%@&Password=%@&Version=1", encodedUsername, encodedPassword];
+    
+    NSString *response = [self requestToServer:registrationUrl];
+    NSLog(@"Registration Response is %@", response);
+    
+    return YES;
+}
+
 - (NSString*) requestToServer:(NSString*)urlRequest
 {
     NSString *fullUrl = [[NSString alloc] initWithFormat:@"%@%@", ServerURL, urlRequest];

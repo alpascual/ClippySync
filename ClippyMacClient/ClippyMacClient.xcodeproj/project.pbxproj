@@ -10,6 +10,8 @@
 		76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F01682CDA400A789EA /* ServerProtocol.m */; };
 		76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F31682CDCB00A789EA /* NSString+Addition.m */; };
 		76BAB2F71682CEE200A789EA /* NSData+NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */; };
+		76BAB2FB1688128100A789EA /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76BAB2F91688128100A789EA /* RegistrationViewController.m */; };
+		76BAB2FC1688128100A789EA /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BAB2FA1688128100A789EA /* RegistrationViewController.xib */; };
 		8868EB7D1678EB710036A0DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8868EB7C1678EB710036A0DA /* Cocoa.framework */; };
 		8868EB871678EB710036A0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8868EB851678EB710036A0DA /* InfoPlist.strings */; };
 		8868EB891678EB710036A0DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8868EB881678EB710036A0DA /* main.m */; };
@@ -31,6 +33,9 @@
 		76BAB2F31682CDCB00A789EA /* NSString+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Addition.m"; sourceTree = "<group>"; };
 		76BAB2F51682CEE200A789EA /* NSData+NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSDataAdditions.h"; sourceTree = "<group>"; };
 		76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+NSDataAdditions.m"; sourceTree = "<group>"; };
+		76BAB2F81688128100A789EA /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegistrationViewController.h; path = ClippyMacClient/RegistrationViewController.h; sourceTree = "<group>"; };
+		76BAB2F91688128100A789EA /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegistrationViewController.m; path = ClippyMacClient/RegistrationViewController.m; sourceTree = "<group>"; };
+		76BAB2FA1688128100A789EA /* RegistrationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegistrationViewController.xib; path = ClippyMacClient/RegistrationViewController.xib; sourceTree = "<group>"; };
 		8868EB781678EB710036A0DA /* ClippyMacClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClippyMacClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8868EB7C1678EB710036A0DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8868EB7F1678EB710036A0DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -82,6 +87,9 @@
 		8868EB6D1678EB710036A0DA = {
 			isa = PBXGroup;
 			children = (
+				76BAB2F81688128100A789EA /* RegistrationViewController.h */,
+				76BAB2F91688128100A789EA /* RegistrationViewController.m */,
+				76BAB2FA1688128100A789EA /* RegistrationViewController.xib */,
 				8868EB821678EB710036A0DA /* ClippyMacClient */,
 				8868EB7B1678EB710036A0DA /* Frameworks */,
 				8868EB791678EB710036A0DA /* Products */,
@@ -213,6 +221,7 @@
 				8868EBA116790C590036A0DA /* sync-image.png in Resources */,
 				8868EBAB1679374D0036A0DA /* OptionsWindowController.xib in Resources */,
 				8868EBB016793AD70036A0DA /* LoginWindowController.xib in Resources */,
+				76BAB2FC1688128100A789EA /* RegistrationViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +239,7 @@
 				76BAB2F11682CDA400A789EA /* ServerProtocol.m in Sources */,
 				76BAB2F41682CDCB00A789EA /* NSString+Addition.m in Sources */,
 				76BAB2F71682CEE200A789EA /* NSData+NSDataAdditions.m in Sources */,
+				76BAB2FB1688128100A789EA /* RegistrationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -43,6 +43,10 @@
     
     [self.options showWindow:self];
 }
+- (IBAction)quitPresses:(id)sender
+{
+    
+}
 
 
 @end
