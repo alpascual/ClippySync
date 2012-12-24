@@ -32,15 +32,22 @@ static const short _base64DecodingTable[256] = {
     -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2, -2
 };
 
-- (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)pasword
+- (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)password
 {
     
-#warning todo pass the server url and craete the protocol
+//"Login?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
+    
+    NSString *encodedUsername = [ServerProtocol encodeBase64WithString:username];
+    NSString *encodedPassword = [ServerProtocol encodeBase64WithString:password];
+    NSString *loginUrl = [[NSString alloc] initWithFormat:@"Login?username=%@&Password=%@&Version=1", encodedUsername, encodedPassword];
+    
+    NSString *response = [self requestToServer:loginUrl];
     
 }
 - (NSString*) requestToServer:(NSString*)urlRequest
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlRequest]];
+    NSString *fullUrl = [[NSString alloc] initWithFormat:@"%@%@", ServerURL, urlRequest];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:fullUrl]];
     NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];    
     NSString *get = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     

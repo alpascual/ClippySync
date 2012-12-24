@@ -10,7 +10,9 @@
 
 @interface ServerProtocol : NSObject
 
-- (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)pasword;
+- (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)password;
 - (NSString*) requestToServer:(NSString*)urlRequest;
+
++ (NSString *)encodeBase64WithString:(NSString *)strData;
 
 @end
