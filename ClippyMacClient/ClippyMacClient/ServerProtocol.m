@@ -44,8 +44,10 @@ static const short _base64DecodingTable[256] = {
     NSString *response = [self requestToServer:loginUrl];
     NSLog(@"Login Response is %@", response);
     
+    if ( [response isEqualToString:@"true"] == YES)
+        return YES;
     
-    return YES;
+    return NO;
 }
 
 - (BOOL) serverRegistration:(NSString *)username Password:(NSString*)password

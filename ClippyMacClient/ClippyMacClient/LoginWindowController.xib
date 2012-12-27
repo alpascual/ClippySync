@@ -279,11 +279,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
-						<string key="label">loginPress</string>
+						<string key="label">loginPress:</string>
 						<reference key="source" ref="1001"/>
 						<reference key="destination" ref="672032080"/>
 					</object>
-					<int key="connectionID">128</int>
+					<int key="connectionID">129</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">registerPress:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="132231395"/>
+					</object>
+					<int key="connectionID">130</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -572,7 +580,7 @@
 								<float key="scoringTypeFloat">24</float>
 								<int key="contentType">2</int>
 							</object>
-							<object class="IBNSLayoutConstraint" id="509306115">
+							<object class="IBNSLayoutConstraint" id="629271172">
 								<reference key="firstItem" ref="451284317"/>
 								<int key="firstAttribute">3</int>
 								<int key="relation">0</int>
@@ -857,7 +865,7 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">127</int>
-						<reference key="object" ref="509306115"/>
+						<reference key="object" ref="629271172"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 				</array>
@@ -889,7 +897,7 @@
 				<string key="16.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="17.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<array class="NSMutableArray" key="2.IBNSViewMetadataConstraints">
-					<reference ref="509306115"/>
+					<reference ref="629271172"/>
 					<reference ref="170131642"/>
 					<reference ref="443085310"/>
 					<reference ref="503911058"/>
@@ -945,7 +953,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">128</int>
+			<int key="maxID">130</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>

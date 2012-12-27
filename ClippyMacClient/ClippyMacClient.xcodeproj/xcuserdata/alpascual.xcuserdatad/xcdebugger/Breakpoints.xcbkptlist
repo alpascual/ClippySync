@@ -34,12 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378099299.853"
+         timestampString = "378332838.327024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "40"
          endingLineNumber = "40"
-         landmarkName = "-loginPress"
+         landmarkName = "-loginPress:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -47,25 +47,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378099299.853"
+         timestampString = "378332838.327024"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "38"
-         endingLineNumber = "38"
-         landmarkName = "-loginPress"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-registerPress:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378099299.853"
+         filePath = "ClippyMacClient/ServerProtocol.m"
+         timestampString = "378333143.142288"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "45"
-         endingLineNumber = "45"
-         landmarkName = "-registerPress"
+         startingLineNumber = "69"
+         endingLineNumber = "69"
+         landmarkName = "-requestToServer:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ClippyMacClient/ServerProtocol.m"
+         timestampString = "378333338.955734"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-serverLogin:Pasword:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
