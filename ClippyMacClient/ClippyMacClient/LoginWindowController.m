@@ -40,6 +40,15 @@
     BOOL loginSuccess = [self.serverProtocol serverLogin:self.textEmail.stringValue Pasword:self.textPassword.stringValue];
     
     NSLog(@"login works? %c", loginSuccess);
+    
+    if ( loginSuccess == FALSE)
+        self.responseText.stringValue = @"Incorrect username or password";
+    else
+    {
+        self.responseText.stringValue = @"";
+        //TODO Hide the login page
+    }
+        
 }
 
 - (IBAction) registerPress:(id)sender

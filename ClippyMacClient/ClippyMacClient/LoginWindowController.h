@@ -16,6 +16,7 @@
 @property (nonatomic, strong) IBOutlet NSTextField *textPassword;
 @property (nonatomic, strong) IBOutlet NSButton *buttonLogin;
 @property (nonatomic, strong) IBOutlet NSButton *buttonRegister;
+@property (nonatomic, strong) IBOutlet NSTextField *responseText;
 
 @property (nonatomic, strong) ServerProtocol *serverProtocol;
 
