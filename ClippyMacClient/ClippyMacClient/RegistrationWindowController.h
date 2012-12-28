@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "ServerProtocol.h"
 
 @interface RegistrationWindowController : NSWindowController
 
@@ -14,5 +15,8 @@
 @property (nonatomic, strong) IBOutlet NSTextField *textPassword;
 @property (nonatomic, strong) IBOutlet NSTextField *textRepeatPassword;
 @property (nonatomic, strong) IBOutlet NSButton *buttonRegister;
+
+@property (nonatomic, strong) ServerProtocol *serverProtocol;
+@property (nonatomic, strong) IBOutlet NSTextField *labelResponse;
 
 @end

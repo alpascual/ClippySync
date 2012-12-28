@@ -59,7 +59,10 @@
 
 - (IBAction) registerPress:(id)sender
 {
-    [self.serverProtocol serverRegistration:self.textEmail.value Password:self.textPassword.value];
+    self.registrationWindow = [[RegistrationWindowController alloc] initWithWindowNibName:@"RegistrationWindowController"];
+    
+    [self.registrationWindow showWindow:self];    
+    
 }
 
 @end

@@ -34,25 +34,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378332838.327024"
+         timestampString = "378358995.840963"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "40"
-         endingLineNumber = "40"
+         startingLineNumber = "42"
+         endingLineNumber = "42"
          landmarkName = "-loginPress:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378357751.595487"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
-         landmarkName = "-registerPress:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -79,6 +66,19 @@
          startingLineNumber = "47"
          endingLineNumber = "47"
          landmarkName = "-serverLogin:Pasword:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ClippyMacClient/RegistrationWindowController.m"
+         timestampString = "378359774.455975"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "38"
+         endingLineNumber = "38"
+         landmarkName = "-createAccountPressed:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

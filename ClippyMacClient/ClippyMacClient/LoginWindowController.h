@@ -10,6 +10,7 @@
 
 #import "ServerProtocol.h"
 #import "DefineInclude.h"
+#import "RegistrationWindowController.h"
 
 @interface LoginWindowController : NSWindowController
 
@@ -20,5 +21,6 @@
 @property (nonatomic, strong) IBOutlet NSTextField *responseText;
 
 @property (nonatomic, strong) ServerProtocol *serverProtocol;
+@property (nonatomic, strong) RegistrationWindowController *registrationWindow;
 
 @end
