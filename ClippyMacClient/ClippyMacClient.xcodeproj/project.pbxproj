@@ -36,6 +36,7 @@
 		76BAB3001689437400A789EA /* RegistrationWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationWindowController.h; sourceTree = "<group>"; };
 		76BAB3011689437400A789EA /* RegistrationWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationWindowController.m; sourceTree = "<group>"; };
 		76BAB3021689437400A789EA /* RegistrationWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegistrationWindowController.xib; sourceTree = "<group>"; };
+		76BAB305168D489A00A789EA /* DefineInclude.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DefineInclude.h; sourceTree = "<group>"; };
 		8868EB781678EB710036A0DA /* ClippyMacClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClippyMacClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8868EB7C1678EB710036A0DA /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8868EB7F1678EB710036A0DA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -80,6 +81,7 @@
 				76BAB2F01682CDA400A789EA /* ServerProtocol.m */,
 				76BAB2F51682CEE200A789EA /* NSData+NSDataAdditions.h */,
 				76BAB2F61682CEE200A789EA /* NSData+NSDataAdditions.m */,
+				76BAB305168D489A00A789EA /* DefineInclude.h */,
 			);
 			name = BusinessLogic;
 			sourceTree = "<group>";

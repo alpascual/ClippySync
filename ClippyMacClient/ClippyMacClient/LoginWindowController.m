@@ -35,6 +35,8 @@
 
 - (IBAction) loginPress:(id)sender
 {
+    // test account alpascualtest
+    // password 1234567
     
     //TODO
     BOOL loginSuccess = [self.serverProtocol serverLogin:self.textEmail.stringValue Pasword:self.textPassword.stringValue];
@@ -47,6 +49,10 @@
     {
         self.responseText.stringValue = @"";
         //TODO Hide the login page
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:self.textEmail.stringValue forKey:UsernameKey];
+        [defaults setObject:self.textPassword.stringValue forKey:PasswordKey];
+        [defaults synchronize];
     }
         
 }

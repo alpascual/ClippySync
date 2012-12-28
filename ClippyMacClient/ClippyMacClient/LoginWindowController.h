@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 #import "ServerProtocol.h"
+#import "DefineInclude.h"
 
 @interface LoginWindowController : NSWindowController
 

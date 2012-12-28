@@ -47,11 +47,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "ClippyMacClient/LoginWindowController.m"
-         timestampString = "378357215.891353"
+         timestampString = "378357751.595487"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "56"
+         endingLineNumber = "56"
          landmarkName = "-registerPress:"
          landmarkType = "5">
       </FileBreakpoint>
