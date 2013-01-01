@@ -43,18 +43,24 @@
     
     NSLog(@"login works? %c", loginSuccess);
     
-    if ( loginSuccess == FALSE)
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ( loginSuccess == FALSE){
         self.responseText.stringValue = @"Incorrect username or password";
+        [defaults removeObjectForKey:UsernameKey];
+        [defaults removeObjectForKey:PasswordKey];
+    }
     else
     {
         self.responseText.stringValue = @"";
         //TODO Hide the login page
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
         [defaults setObject:self.textEmail.stringValue forKey:UsernameKey];
         [defaults setObject:self.textPassword.stringValue forKey:PasswordKey];
         [defaults synchronize];
     }
-        
+    
+    [defaults synchronize];
 }
 
 - (IBAction) registerPress:(id)sender

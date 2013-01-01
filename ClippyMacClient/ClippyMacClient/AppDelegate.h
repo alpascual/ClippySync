@@ -17,6 +17,9 @@
 @property (nonatomic,strong) NSStatusItem *statusItem;
 @property (nonatomic,strong) NSImage *statusImage;
 @property (nonatomic,strong) NSImage *statusHighlighImage;
+@property (nonatomic,strong) NSTimer *clipboardTimer;
+@property (nonatomic) BOOL bPaused;
+@property (nonatomic) double lastNumber;
 
 @property (nonatomic,strong) OptionsWindowController *options;
 @property (nonatomic,strong) LoginWindowController *login;

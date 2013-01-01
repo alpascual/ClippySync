@@ -75,6 +75,40 @@ static const short _base64DecodingTable[256] = {
     return get;
 }
 
+- (double) sendTextToClipboard:(NSString*)clipboard withUsername:(NSString*)username Password:(NSString*)password
+{
+    //"SendClipboard?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Clipboard=" + Encrypter.base64Encode(sClipboard) + "&Version=1";
+    
+
+    NSString *encodedUsername = [ServerProtocol encodeBase64WithString:username];
+    NSString *encodedPassword = [ServerProtocol encodeBase64WithString:password];
+    NSString *encodedClipboard = [ServerProtocol encodeBase64WithString:clipboard];
+    
+    NSString *clipboardUrl = [[NSString alloc] initWithFormat:@"SendClipboard?username=%@&Password=%@&Clipboard=%@&Version=1", encodedUsername, encodedPassword, encodedClipboard];
+    
+    NSString *response = [self requestToServer:clipboardUrl];
+    NSLog(@"Clipboard Response %@", response);
+    
+    double responseDouble = [response doubleValue];    
+    
+    return responseDouble;
+}
+
+- (NSString*)getTextFromClipboard:(NSString*)username withPassword:(NSString*)password andSequenceNumber:(double)sequenceNumber
+{
+    //"GetClipboard?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) +
+    //"&SequenceNumber=" + SequenceNumber + "&version=1"
+    
+    NSString *encodedUsername = [ServerProtocol encodeBase64WithString:username];
+    NSString *encodedPassword = [ServerProtocol encodeBase64WithString:password];
+    
+    NSString *clipboardUrl = [[NSString alloc] initWithFormat:@"GerClipboard?username=%@&Password=%@&SequenceNumber=%f&version=1", encodedUsername, encodedPassword, sequenceNumber];
+    
+    NSString *response = [self requestToServer:clipboardUrl];
+    
+    return response;
+}
+
 
 // To Encode
 + (NSString *)encodeBase64WithString:(NSString *)strData {
@@ -209,21 +243,7 @@ static const short _base64DecodingTable[256] = {
 
 
 /*
- public bool ServerRegistration(string Username, string Password)
- {
- string sResponse = RequestToServer("Register?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
- 
- if (sResponse == "")
- return true;
- 
- return false;
- }
- public bool ServerLogin(string Username, string Password)
- {
- string sResponse = RequestToServer("Login?username=" + Encrypter.base64Encode(Username) + "&Password=" + Encrypter.base64Encode(Password) + "&Version=1");
- 
- return Convert.ToBoolean(sResponse);
- }
+
  
  public double SendTextToClipboard(string Username, string Password, string sClipboard)
  {

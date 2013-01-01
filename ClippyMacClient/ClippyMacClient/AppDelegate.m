@@ -24,6 +24,32 @@
     [self.statusItem setMenu:self.statusMenu];
     [self.statusItem setToolTip:@"Sync the clipboard"];
     
+    self.bPaused = NO;
+    self.clipboardTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(timerRunning:)  userInfo:nil repeats:YES];
+    
+    
+}
+
+- (void) timerRunning:(id)sender
+{
+    if ( self.bPaused == NO)
+    {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        if ( [defaults objectForKey:UsernameKey] != nil)
+        {
+            // We are enable, start sync
+            // Check on the server
+//            string clipBoardText = protocol.GetTextFromClipboard(CredentialsStorage.Username, CredentialsStorage.Password, CredentialsStorage.LastNumber);
+//            try
+//            {
+//                SyncItem item = JSONHelper.Deserialize<SyncItem>(clipBoardText);
+//                
+//                CredentialsStorage.LastNumber = item.SyncID;
+//                CredentialsStorage.ClipboardData = item.ClipboardData;
+//            }
+//            catch { }
+        }
+    }
 }
 
 
@@ -35,7 +61,7 @@
 }
 - (IBAction)pausePressed:(id)sender
 {
-    
+    self.bPaused = !self.bPaused;
 }
 - (IBAction)optionsPressed:(id)sender
 {
@@ -45,7 +71,8 @@
 }
 - (IBAction)quitPresses:(id)sender
 {
-    
+    // Hope this is how to close an app in Mac as well.
+    exit(1);
 }
 
 

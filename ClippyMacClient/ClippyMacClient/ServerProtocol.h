@@ -12,6 +12,8 @@
 
 - (BOOL) serverLogin:(NSString*)username Pasword:(NSString*)password;
 - (BOOL) serverRegistration:(NSString *)username Password:(NSString*)password;
+- (double) sendTextToClipboard:(NSString*)clipboard withUsername:(NSString*)username Password:(NSString*)password;
+
 - (NSString*) requestToServer:(NSString*)urlRequest;
 
 + (NSString *)encodeBase64WithString:(NSString *)strData;
