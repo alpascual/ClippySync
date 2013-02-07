@@ -18,4 +18,5 @@
 
 + (NSString *)encodeBase64WithString:(NSString *)strData;
 
+- (NSString*)getTextFromClipboard:(NSString*)username withPassword:(NSString*)password andSequenceNumber:(double)sequenceNumber;
 @end

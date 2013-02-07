@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "JSONRepresentation.h"
+#import "CJSONSerializer.h"
 
 @implementation AppDelegate
 
@@ -37,7 +39,20 @@
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         if ( [defaults objectForKey:UsernameKey] != nil)
         {
-            // We are enable, start sync
+            ServerProtocol *protocol = [[ServerProtocol alloc] init];
+            NSString *clipboardText = [protocol getTextFromClipboard:[defaults objectForKey:UsernameKey] withPassword:[defaults objectForKey:PasswordKey] andSequenceNumber:self.lastNumber];
+            
+            NSError *error;
+            NSDictionary *theDictionary = [NSDictionary dictionaryWithJSONString:clipboardText error:&error];
+            
+            //todo
+            NSDictionary *data = [theDictionary objectForKey:@"data"];
+            NSArray *currentDictionaty = [data objectForKey:@"current_condition"];
+            NSDictionary *temp = [currentDictionaty objectAtIndex:0];
+            // F tempeture
+            NSString *fTempeture = [temp objectForKey:@"temp_F"];
+            id weatherDesc = [temp objectForKey:@"weatherDesc"];
+            NSDictionary *weatherValues = [weatherDesc objectAtIndex:0];            // We are enable, start sync
             // Check on the server
 //            string clipBoardText = protocol.GetTextFromClipboard(CredentialsStorage.Username, CredentialsStorage.Password, CredentialsStorage.LastNumber);
 //            try

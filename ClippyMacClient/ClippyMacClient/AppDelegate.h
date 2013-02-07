@@ -10,6 +10,10 @@
 #import "OptionsWindowController.h"
 #import "LoginWindowController.h"
 
+#import "NSDictionary_JSONExtensions.h"
+
+#import "CJSONDeserializer.h"
+
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
